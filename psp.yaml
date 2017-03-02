@@ -1,0 +1,43 @@
+{
+  "kind": "PodSecurityPolicy",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "nohostpathvolumes"
+  },
+  "spec": {
+    "seLinux": {
+      "rule": "RunAsAny"
+    },
+    "supplementalGroups": {
+      "rule": "RunAsAny"
+    },
+    "fsGroup": {
+      "rule": "RunAsAny"
+    },
+    "runAsUser": {
+      "rule": "RunAsAny"
+    },
+    "volumes": ["azureFile",
+                "flocker",
+                "flexVolume",
+                "emptyDir",
+                "gcePersistentDisk",
+                "awsElasticBlockStore",
+                "gitRepo",
+                "secret",
+                "nfs",
+                "iscsi",
+                "glusterfs",
+                "persistentVolumeClaim",
+                "rbd",
+                "cinder",
+                "cephFS",
+                "downwardAPI",
+                "fc",
+                "configMap",
+                "vsphereVolume",
+                "quobyte",
+                "azureDisk",
+                "photonPersistentDisk"]
+  }
+}
